@@ -1,0 +1,6 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="1" author="amine">
+        <sql> CREATE TABLE clients( id BIGINT NOT NULL AUTO_INCREMENT, fname VARCHAR(255) NOT NULL, lname VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, createat VARCHAR(255) NOT NULL , CONSTRAINT PK_id PRIMARY KEY (id) ); </sql>
+        <rollback> DROP TABLE clients; </rollback>
+    </changeSet>
+</databaseChangeLog>

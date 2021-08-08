@@ -1,0 +1,120 @@
+<div class="content-wrapper">
+  <div class="content-header">
+      <div class="container-fluid">
+          <div class="row mb-2">
+              <div class="col-sm-6">
+                  <h1 class="m-0">List subcategories</h1>
+              </div>
+              <div class="col-sm-6">
+                  <ol class="breadcrumb float-sm-right">
+                      <li class="breadcrumb-item"><a href="#">Home</a></li>
+                      <li class="breadcrumb-item active">List subcategories</li>
+                  </ol>
+              </div>
+          </div>
+      </div>
+  </div>
+  <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col col-lg-12">
+                  <div class="card">
+                      <div class="card-header">
+                          <div class="row">
+                              <div class="col col-lg-8">
+                                  <div class="row">
+                                      <div class="col">
+                                          <input type="text" class="form-control" name="name" [(ngModel)]="name">
+                                      </div>
+                                      <div class="col">
+                                          <button class="btn btn-primary btn-sm"
+                                              (click)="searchTitle()">Search</button>
+
+                                      </div>
+                                      <!--div class="col">
+                                          <button class="btn btn-success btn-sm"
+                                              (click)="getCategories()">Show all</button>
+                                      </div-->
+                                  </div>
+
+                              </div>
+
+
+
+
+
+
+                              <div class="col col-lg-4">
+
+
+
+
+                                <a [routerLink]="['/addsubmodel']">
+                                    <button class="btn btn-sm btn-primary float-right"><i
+                                            class="fas fa-plus"></i></button>
+                                    </a>
+                            </div>
+
+
+
+
+
+
+
+                          </div>
+
+
+
+                      </div>
+                      <div class="card-body">
+
+                          <table class="table table-bordered table-striped">
+                              <thead>
+                                  <tr>
+                                      <th>SubModel name</th>
+                                      <th>Model parent</th>
+                                      <th>Actions</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="
+                                      let submodel of subModels | paginate: {
+                                          itemsPerPage: 10,
+                                           currentPage: page,
+                                           totalItems: totalItems
+                                     }">
+                                      <td>{{submodel?.name}}</td>
+                                      <td>{{submodel.model?.name}}</td>
+                                      <td>
+                                          <div class="float-right">
+                                              <button (click)="updateSubModel(submodel.id)"
+                                                  class="btn btn-sm btn-warning m-2">
+                                                  <i class="fas fa-edit"></i>
+                                              </button>
+                                              <button (click)="deleteSubModel(submodel.id)"
+                                                  class="btn btn-sm btn-danger m-2">
+                                                  <i class="fas fa-trash"></i>
+                                              </button>
+                                          </div>
+
+                                      </td>
+
+                                  </tr>
+                                  <tr *ngIf="subModels.length == 0">
+                                      <td colspan = "2" style="text-align: center;">
+                                          No data found!
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          <div *ngIf="subModels.length != 0">
+                              <pagination-controls (pageChange)="page = $event"></pagination-controls>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+</div>
+

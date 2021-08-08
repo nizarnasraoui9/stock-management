@@ -1,0 +1,191 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+      <div class="container-fluid">
+          <div class="row mb-2">
+              <div class="col-sm-6">
+                  <h1 class="m-0">Create Part</h1>
+              </div>
+              <div class="col-sm-6">
+                  <ol class="breadcrumb float-sm-right">
+                      <li class="breadcrumb-item"><a href="#">Home</a></li>
+                      <li class="breadcrumb-item active">Create Part</li>
+                  </ol>
+              </div>
+          </div>
+      </div>
+  </div>
+  <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col col-lg-12">
+
+                  <form (ngSubmit)="createPart()" method="POST">
+                      <div class="card card-default">
+                          <div class="card-header">
+
+                              <a [routerLink]="['/listparts']">
+                                  <button class="btn btn-sm btn-primary"><i
+                                          class="fas fa-angle-left right"></i></button>
+                              </a>
+
+                              <div class="card-tools">
+                                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                      <i class="fas fa-minus"></i>
+                                  </button>
+                                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                      <i class="fas fa-times"></i>
+                                  </button>
+                              </div>
+                          </div>
+                          <div class="card-body">
+
+                              <div class="row">
+                                  <div class="form-group col-lg-12">
+                                      <label>Part name</label>
+                                      <input type="text" [(ngModel)]="name" name="name"  class="form-control" />
+                                  </div>
+                              </div>
+
+                              <div class="row">
+                                <div class="form-group col-lg-12">
+                                    <label>Reference</label>
+                                    <input type="text" [(ngModel)]="referene" name="referene"  class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="form-group col-lg-12">
+                                  <label>Quantity</label>
+                                  <input type="number" [(ngModel)]="quantity" name="quantity"  class="form-control" />
+                              </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="form-group col-lg-12">
+                                <label>SellPrice</label>
+                                <input type="number" [(ngModel)]="sellPrice" name="sellPrice"  class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="form-group col-lg-12">
+                              <label>BuyPrice</label>
+                              <input type="number" [(ngModel)]="buyPrice" name="buyPrice"  class="form-control" />
+                          </div>
+                      </div>
+
+
+                      <div class="form-group col-lg-6">
+                        <label>SubSubCategory</label>
+                        <select class="form-control" name="subsubcategory" [(ngModel)]="subsubcategorySelected" (ngModelChange)="getsubsubCategorySelected($event)"><!-- -->
+                            <option *ngFor="let subsubcategory of subsubcategories" [value] ="subsubcategory.id">{{ subsubcategory.title }}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                      <label>Manufacture</label>
+                      <select class="form-control" name="manufacture" [(ngModel)]="manufactureSelected" (ngModelChange)="getManufactureSelected($event)"><!-- -->
+                          <option *ngFor="let manufacture of manufactures" [value] ="manufacture.id">{{ manufacture.name }}</option>
+                      </select>
+                  </div>
+
+                     <!-- <div class="form-group col-lg-6">
+                        <label>Engine</label>
+                        <select  class="form-control" name="engine" [(ngModel)]="engineSelected" (ngModelChange)="getEngineSelected($event)">
+                            <option *ngFor="let engine of engines" [value] ="engine.id">{{ engine.name }}</option>
+                        </select>
+                    </div> -->
+                   <!-- <ng-multiselect-dropdown formControlName="engine"
+  >
+
+  <option *ngFor="let engine of engines" [value] ="engine.id">{{ engine.name }}</option>
+  (onSelect)="getEngineSelected($event)"
+  >
+  </ng-multiselect-dropdown>-->
+  <!--<form >
+  <ng-multiselect-dropdown>
+
+
+
+
+            <select class="form-control" name="engine" [(ngModel)]="engineSelected" (ngModelChange)="getEngineSelected($event)">
+              <option *ngFor="let engine of engines" [value] ="engine.id">{{ engine.name }}</option>
+            </select>
+  </ng-multiselect-dropdown>
+        </form> -->
+        <label>Engines</label>
+        <ng-select [items]="engines"
+        bindLabel="name"
+
+        appendTo="body"
+        [multiple]="true"
+        [(ngModel)]="engineSelected" (ngModelChange)="getEngineSelected($event)">
+</ng-select>
+
+                    <div class="form-group col-lg-6">
+                        <label>Brand(parent)</label>
+                        <select class="form-control" name="brand" [(ngModel)]="brandSelected" (ngModelChange)="getBrandSelected($event)">
+                            <option *ngFor="let brand of brands" [value] ="brand.id">{{ brand.name }}</option>
+                        </select>
+                    </div>
+
+
+
+
+                   <div class="form-group col-lg-6">
+                              <label for="model">Model Name</label>
+                              <select  class="form-control" name="model" [(ngModel)]="modelSelected" (ngModelChange)="getModelSelected($event)">
+                                <option value="">--Select--</option>
+                                <option *ngFor="let Model of filteredModels " value={{Model.id}}>
+                                    {{Model.name}}
+                                </option>
+                          </select>
+                          </div>
+
+
+                          <div class="form-group col-lg-6">
+                            <label for="model">SubModel Name</label>
+                            <select  class="form-control" name="submodel" [(ngModel)]="submodelSelected" (ngModelChange)="getsubModelSelected($event)" >
+                              <option value="">--Select--</option>
+                              <option *ngFor="let submodel of filteredSubModels " value={{submodel.id}}>
+                                  {{submodel.name}}
+                              </option>
+                        </select>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          </div>
+                          <div class="row">
+                            <div class="form-group col-lg-6">
+                                <label>Part image</label>
+                                <input type="file" [(ngModel)]="fileToUpload" name="fileToUpload"(change)="handleFileInput($any($event.target).files) " />
+                            </div>
+                            </div>
+                          <div class="card-footer">
+                              <div class="row float-right">
+                                  <div class="col">
+                                      <button type="reset" class="btn btn-primary  btn-sm m-3">Cancel</button>
+                                      <button type="submit" class="btn btn-success btn-sm">Save</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+
+          </div>
+      </div>
+  </section>
+</div>

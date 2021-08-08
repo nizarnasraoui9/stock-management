@@ -1,0 +1,152 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+        <img src="assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            style="opacity: .8">
+        <span class="brand-text font-weight-light">STOCK MANAGEMENT</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">Alexander Pierce</a>
+            </div>
+        </div>
+
+        <!-- SidebarSearch Form -->
+        <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-sidebar">
+                        <i class="fas fa-search fa-fw"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+                <li class="nav-item">
+                    <a [routerLink]="['/dashboard']" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Dashboard
+                            <!--span class="right badge badge-danger">New</span-->
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-truck-moving"></i>
+                        <p>
+                            Stock management
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a [routerLink]="['/listcategories']" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Categories</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                          <a [routerLink]="['/listsubcategories']" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>SubCategories</p>
+                          </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a [routerLink]="['/listsubsubcategories']" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>SubSubCategories</p>
+                        </a>
+                    </li>
+
+                        <li class="nav-item">
+                          <a [routerLink]="['/listbrands']" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Brands </p>
+                          </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a [routerLink]="['/listmodels']" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Models</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a [routerLink]="['/listsubmodels']" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>SubModels</p>
+                      </a>
+                  </li>
+
+                        <li class="nav-item">
+                          <a [routerLink]="['/listmanufactures']" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Manufactures</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a [routerLink]="['/listengines']" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Engines</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a [routerLink]="['/listparts']" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Parts</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>
+                            Inventory
+                            <!--span class="right badge badge-danger">New</span-->
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-file-alt"></i>
+                        <p>
+                            Movement
+                            <!--span class="right badge badge-danger">New</span-->
+                        </p>
+                    </a>
+                </li>
+
+
+                  <li class="nav-item">
+                      <a [routerLink]="['/toggle']" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>toggle</p>
+                      </a>
+                  </li>
+
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

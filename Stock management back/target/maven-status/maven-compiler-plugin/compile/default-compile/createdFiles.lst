@@ -1,0 +1,12 @@
+com/example/FormationAngularSpring/Model/Entities/Engine.class
+com/example/FormationAngularSpring/Model/Entities/BrandEngine.class
+com/example/FormationAngularSpring/Model/Entities/Image.class
+com/example/FormationAngularSpring/Model/Entities/Manufacture.class
+com/example/FormationAngularSpring/Model/Entities/Category.class
+com/example/FormationAngularSpring/Model/Entities/SubCategory.class
+com/example/FormationAngularSpring/Model/Entities/Model.class
+com/example/FormationAngularSpring/Model/Entities/Brand.class
+com/example/FormationAngularSpring/FormationAngularSpringApplication.class
+com/example/FormationAngularSpring/Model/Entities/Part.class
+com/example/FormationAngularSpring/Model/Entities/Submodel.class
+com/example/FormationAngularSpring/Model/Entities/SubSubCategory.class
